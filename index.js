@@ -121,7 +121,7 @@ app.delete('/api/portfolio/delete/:id', async (req, res) => {
 });
 
 const registrationRoutes = require('./routes/registration');
-app.use('/api/registrations', registrationRoutes);
+app.use('/api/registrations', require('./routes/registration'));
 
 
 // Start server

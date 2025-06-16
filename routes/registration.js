@@ -44,4 +44,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+// DELETE registration by ID
+router.delete('/:id', async (req, res) => {
+  try {
+    await Registration.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: 'Registration deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to delete registration' });
+  }
+});
+
+
 module.exports = router;

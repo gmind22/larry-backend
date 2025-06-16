@@ -120,6 +120,10 @@ app.delete('/api/portfolio/delete/:id', async (req, res) => {
   }
 });
 
+const registrationRoutes = require('./routes/registration');
+app.use('/api/registrations', registrationRoutes);
+
+
 // Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
